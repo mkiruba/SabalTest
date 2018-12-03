@@ -1,4 +1,5 @@
-﻿using System.Net.Http;
+﻿using SabalTest.Models;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace SabalTest.Services
@@ -8,5 +9,6 @@ namespace SabalTest.Services
         Task<HttpResponseMessage> GetTickers(CurrenyPair currencyPair);
         Task<HttpResponseMessage> GetOrderBook(CurrenyPair currencyPair);
         Task<HttpResponseMessage> GetTransactions(CurrenyPair currencyPair);
+        Task<OrderBookEstimatorModel> GetOrderBookEstimator(CurrenyPair currencyPair, decimal safetyPercentageOrder);
     }
 }

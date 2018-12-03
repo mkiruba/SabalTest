@@ -66,8 +66,13 @@ namespace SabalTest.Controllers
                 transactionsModels = JsonConvert.DeserializeObject<IList<TransactionsModel>>(jsonString);
             }
             return transactionsModels;
-            //return new TransactionsModel() { Amount=2.20M, Price=3.30M, Tid=1.0M, TimeStamp= DateTime.Today, Type =1 };
+        }
 
+        // GET api/<controller>/orderbook/{currenypair}
+        [HttpGet("orderbookestimator/{currencyPair}")]
+        public async Task<OrderBookEstimatorModel> OrderBookEstimatorAsync(CurrenyPair currencyPair, decimal safetyPercentageOrder)
+        {
+            return await bitStampService.GetOrderBookEstimator(currencyPair, safetyPercentageOrder);
         }
     }
 }
