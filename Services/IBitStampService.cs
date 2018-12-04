@@ -9,6 +9,6 @@ namespace SabalTest.Services
         Task<HttpResponseMessage> GetTickers(CurrenyPair currencyPair);
         Task<HttpResponseMessage> GetOrderBook(CurrenyPair currencyPair);
         Task<HttpResponseMessage> GetTransactions(CurrenyPair currencyPair);
-        Task<OrderBookEstimatorModel> GetOrderBookEstimator(CurrenyPair currencyPair, decimal safetyPercentageOrder);
+        Task<OrderBookEstimatorModel> GetOrderBookEstimator(OrderBookModel orderBookModel, decimal safetyPercentageOrder);
     }
 }

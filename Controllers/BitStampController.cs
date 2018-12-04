@@ -48,11 +48,12 @@ namespace SabalTest.Controllers
             {
                 var jsonString = await responseMessage.Content.ReadAsStringAsync();
                 orderBookModel = JsonConvert.DeserializeObject<OrderBookModel>(jsonString);
+                orderBookModel.AskPrice = SetPriceModel(orderBookModel.Asks);
+                orderBookModel.BidPrice = SetPriceModel(orderBookModel.Bids);
             }
             return orderBookModel;
-
         }
-
+                
         // GET api/<controller>/orderbook/{currenypair}
         [HttpGet("transactions/{currencyPair}")]
         public async Task<IList<TransactionsModel>> TransactionsAsync(CurrenyPair currencyPair)
@@ -69,10 +70,26 @@ namespace SabalTest.Controllers
         }
 
         // GET api/<controller>/orderbook/{currenypair}
-        [HttpGet("orderbookestimator/{currencyPair}")]
+        [HttpGet("orderbookestimator/{currencyPair}/{safetyPercentageOrder}")]
         public async Task<OrderBookEstimatorModel> OrderBookEstimatorAsync(CurrenyPair currencyPair, decimal safetyPercentageOrder)
         {
-            return await bitStampService.GetOrderBookEstimator(currencyPair, safetyPercentageOrder);
+            var orderbookModel = await OrderBookAsync(currencyPair);
+            return await bitStampService.GetOrderBookEstimator(orderbookModel, safetyPercentageOrder);
         }
+
+        private List<PriceModel> SetPriceModel(IList<IList<decimal>> prices)
+        {
+            var priceModelList = new List<PriceModel>();
+            foreach (var price in prices)
+            {
+                priceModelList.Add(new PriceModel()
+                {
+                    Price = price[0],
+                    Units = price[1]
+                });
+            }
+            return priceModelList;
+        }
+
     }
 }

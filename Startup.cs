@@ -25,6 +25,7 @@ namespace RFATest
         {
             services.AddMvc();
             services.AddScoped<IBitStampService, BitStampService>();
+            services.AddScoped<IApiClient, ApiClient>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
