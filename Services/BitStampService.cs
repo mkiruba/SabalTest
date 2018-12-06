@@ -7,12 +7,18 @@ namespace SabalTest.Services
 {
     public class BitStampService : IBitStampService
     {
+        #region Private declarations        
         private IApiClient apiClient;
+        #endregion
+
+        #region Constructor  
         public BitStampService(IApiClient apiClient)
         {
             this.apiClient = apiClient;
         }
+        #endregion
 
+        #region Public methods 
         public Task<HttpResponseMessage> GetTickers(CurrenyPair currencyPair)
         {
             return apiClient.Get($"ticker/{currencyPair}");
@@ -47,5 +53,6 @@ namespace SabalTest.Services
                 return orderBookEstimatorModel;
             });           
         }
+        #endregion
     }
 }

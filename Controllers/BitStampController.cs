@@ -15,12 +15,18 @@ namespace SabalTest.Controllers
     [Route("api/[controller]")]
     public class BitStampController : Controller
     {
+        #region Private declarations
         private IBitStampService bitStampService;
+        #endregion
+
+        #region Constructor
         public BitStampController(IBitStampService bitStampService)
         {
             this.bitStampService = bitStampService;
         }
+        #endregion
 
+        #region Public methods
         // GET api/<controller>/ticker/{currenypair}
         [HttpGet("ticker/{currencyPair}")]
         public async Task<TickerModel> TickerAsync(CurrenyPair currencyPair)
@@ -76,7 +82,9 @@ namespace SabalTest.Controllers
             var orderbookModel = await OrderBookAsync(currencyPair);
             return await bitStampService.GetOrderBookEstimator(orderbookModel, safetyPercentageOrder);
         }
+        #endregion
 
+        #region Private methods 
         private List<PriceModel> SetPriceModel(IList<IList<decimal>> prices)
         {
             var priceModelList = new List<PriceModel>();
@@ -90,6 +98,6 @@ namespace SabalTest.Controllers
             }
             return priceModelList;
         }
-
+        #endregion
     }
 }
