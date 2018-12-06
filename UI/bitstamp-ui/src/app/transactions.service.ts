@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, empty } from 'rxjs';
 import { Transaction } from './transaction';
 
-const TRANSACTIONURL = 'https://www.bitstamp.net/api/v2/transactions';
+const TRANSACTIONURL = 'http://localhost:56470/api/bitstamp/transactions';
 @Injectable({
   providedIn: 'root'
 })

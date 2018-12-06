@@ -9,7 +9,9 @@ namespace SabalTest.Models
     {
         [JsonConverter(typeof(UnixDateTimeConverter))]
         public DateTime TimeStamp { get; set; }
+        [JsonIgnore]
         public IList<PriceModel> BidPrice { get; set; }
+        [JsonIgnore]
         public IList<PriceModel> AskPrice { get; set; }       
         public IList<IList<decimal>> Bids { get; set; }
         public IList<IList<decimal>> Asks { get; set; }

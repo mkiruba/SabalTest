@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, empty, } from 'rxjs';
 import { Ticker } from './ticker';
 
-const TICKERURL = 'https://www.bitstamp.net/api/v2/ticker';
+const TICKERURL = 'http://localhost:56470/api/bitstamp/ticker';
 
 @Injectable({
   providedIn: 'root'

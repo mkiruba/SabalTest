@@ -3,7 +3,6 @@
 <app-chart></app-chart>
 
 <!-- DataTables -->
-
 <div class="card mb-3">
     <div class="card-header"><i class="fa fa-table"></i> {{title}}</div>
     <div class="card-body">
@@ -21,9 +20,9 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let tableValue of tableValuesArray">              
+            <tr *ngFor="let tableValue of tableValuesArray">                            
               <td *ngFor="let tv of tableValue">
-                  <span *ngIf="isNumber(tv)">{{ tv }}</span>
+                  {{ tv }}
             </tr>
           </tbody>
         </table>

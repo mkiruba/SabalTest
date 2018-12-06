@@ -24,7 +24,7 @@ export class TransactionComponent implements OnInit {
   }
 
   getTransaction(currencyPair: string) {
-    this.transactionsService.getTransaction(currencyPair).subscribe(x => {
+    this.transactionsService.getTransaction(currencyPair).subscribe(x => {      
       this.transactions = x;
       this.tableHeaders = Object.keys(this.transactions[0]);
       this.transactions.forEach(element => {
