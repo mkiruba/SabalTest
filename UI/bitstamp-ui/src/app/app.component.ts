@@ -1,6 +1,4 @@
-import { Component, ViewChild, AfterViewInit, Output } from '@angular/core';
-import { InputSelectionComponent } from './input-selection/input-selection.component';
-import { TableComponent } from './table/table.component';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +6,5 @@ import { TableComponent } from './table/table.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  selectedCurrencyPair = 'btcusd';    
-
-
 
 }

@@ -11,7 +11,7 @@ export class InputSelectionComponent implements OnInit {
   selectedCurrencyPair: string;
   currencyPairs: string[];
   message:string;
-  @Output() getDataEvent = new EventEmitter<string>();
+  @Output() currencyChangeEvent = new EventEmitter<string>();
 
   constructor(private currencyPairsService: CurrencyPairsService, private tickerService: TickerService) { }
 
@@ -24,7 +24,7 @@ export class InputSelectionComponent implements OnInit {
     this.selectedCurrencyPair = currencyPair;
   }
 
-  getData(){    
-    this.getDataEvent.emit(this.selectedCurrencyPair);
+  getData(){
+this.currencyChangeEvent.emit(this.selectedCurrencyPair);
   }
 }

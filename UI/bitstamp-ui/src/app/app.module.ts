@@ -9,13 +9,15 @@ import { AppComponent } from "./AppComponent";
 import { InputSelectionComponent } from './input-selection/input-selection.component';
 import { ChartComponent } from './chart/chart.component';
 import { TableComponent } from './table/table.component';
+import { MainViewComponent } from './main-view/main-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InputSelectionComponent,
     ChartComponent,
-    TableComponent
+    TableComponent,
+    MainViewComponent
   ],
   imports: [
     BrowserModule,
