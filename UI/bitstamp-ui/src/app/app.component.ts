@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, AfterViewInit, Output } from '@angular/core';
+import { InputSelectionComponent } from './input-selection/input-selection.component';
+import { TableComponent } from './table/table.component';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'bitstamp-ui';
+  selectedCurrencyPair = 'btcusd';    
+
+
+
 }
