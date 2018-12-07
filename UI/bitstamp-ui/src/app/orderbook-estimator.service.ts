@@ -13,6 +13,7 @@ export class OrderbookEstimatorService {
 
   getOrderBookEstimator(currencyPair: string, safetyPercent: number): Observable<OrderBookEstimator> {
     console.log(`Search - ${currencyPair}`);
+    console.log(`safetyPercent - ${safetyPercent}`);
     if (currencyPair.length < 1 && !currencyPair.trim()) {
       // if not search term, return empty observable.
       return empty();

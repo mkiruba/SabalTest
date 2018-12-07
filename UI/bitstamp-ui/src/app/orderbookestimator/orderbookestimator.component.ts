@@ -12,6 +12,8 @@ export class OrderbookestimatorComponent implements OnInit {
   orderbookEstimators: any;
   tableHeaders: any;
   tableValues: any;
+  selectedCurrency: string;
+  safetyPercentage: number;
   constructor(private route: ActivatedRoute,
     private orderBookEstService: OrderbookEstimatorService) { }
 
@@ -19,11 +21,16 @@ export class OrderbookestimatorComponent implements OnInit {
     this.title = this.route.snapshot.data["title"];
   }
   onCurrencyChange($event) {
-    this.getOrderBookEstimator($event);
+    this.selectedCurrency = $event;
   }
 
-  getOrderBookEstimator(currencyPair: string) {
-    this.orderBookEstService.getOrderBookEstimator(currencyPair, 0.1).subscribe(x => {
+  onSafetyPercentChange($event) {
+    this.safetyPercentage = $event;    
+    this.getOrderBookEstimator(this.selectedCurrency, $event);
+  }
+
+  getOrderBookEstimator(currencyPair: string, safetyPercent: number) {
+    this.orderBookEstService.getOrderBookEstimator(currencyPair, safetyPercent).subscribe(x => {
       this.orderbookEstimators = x;
       this.tableHeaders = Object.keys(this.orderbookEstimators);
       this.tableValues = Object.values(this.orderbookEstimators);

@@ -5,6 +5,7 @@ import { AngularFontAwesomeModule } from "angular-font-awesome";
 import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";
 import { RouterModule, Routes } from "@angular/router";
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from "./AppComponent";
 import { InputSelectionComponent } from "./input-selection/input-selection.component";
@@ -54,6 +55,7 @@ const appRoutes: Routes = [
     AppRoutingModule,
     NgbModule,
     AngularFontAwesomeModule,
+    FormsModule,
     RouterModule.forRoot(
       appRoutes,
     )
