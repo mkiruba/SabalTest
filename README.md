@@ -5,6 +5,8 @@ Please look here for the unit test project https://github.com/mkiruba/SabalTest/
 
 For some reason, the folders are messed up and the test project was created in a folder outside the solution.
 
+![Image of folder structure](https://user-images.githubusercontent.com/8323702/49639234-653a5380-fa02-11e8-9086-9d3edb9a5b2b.png)
+
 If you get the project from the github and drop this SabalTest.Tests folder after extracting at the same level as SabalTest folder.
 
 # UI Project
