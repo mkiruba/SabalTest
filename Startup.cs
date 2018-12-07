@@ -24,6 +24,7 @@ namespace RFATest
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddCors();
             services.AddScoped<IBitStampService, BitStampService>();
             services.AddScoped<IApiClient, ApiClient>();
         }
@@ -40,6 +41,9 @@ namespace RFATest
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+            // Shows UseCors with CorsPolicyBuilder.
+            app.UseCors(builder =>
+               builder.WithOrigins("*"));
 
             app.UseStaticFiles();
 
