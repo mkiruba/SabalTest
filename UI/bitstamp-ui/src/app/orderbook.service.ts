@@ -4,7 +4,7 @@ import { Observable, empty, } from 'rxjs';
 import { OrderBook } from './orderBook';
 
 // const ORDERBOOKURL = 'https://www.bitstamp.net/api/v2/order_book';
-const ORDERBOOKURL = 'http://localhost:56470/api/bitstamp/orderbook';
+const ORDERBOOKURL = 'http://sabal.azurewebsites.net/api/bitstamp/orderbook';
 @Injectable({
   providedIn: 'root'
 })

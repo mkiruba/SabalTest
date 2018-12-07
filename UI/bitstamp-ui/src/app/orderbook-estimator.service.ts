@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, empty, } from 'rxjs';
 import { OrderBookEstimator } from './orderBookEstimator';
 
-const ORDERBOOKESTURL = 'http://localhost:56470/api/bitstamp/orderbookestimator';
+const ORDERBOOKESTURL = 'http://sabal.azurewebsites.net/api/bitstamp/orderbookestimator';
 @Injectable({
   providedIn: 'root'
 })
