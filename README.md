@@ -20,6 +20,10 @@ Note: Please dont use https, in the above link. The api been hosted in http it d
 Source code for UI project is over here.
 https://github.com/mkiruba/SabalTest/tree/master/UI/bitstamp-ui
 
+use Visual Studio code and open the equivalent workspace folder path for https://github.com/mkiruba/SabalTest/tree/master/UI and open the terminal inside the VS Code.
+
+`run npm update` to get all the required npm packages.
+`ng serve -o` Opens in the browser.
 
 # API Project
 Here is the api project developed using Asp.Net Web api. I have used dependency injection and unit tested completely.
